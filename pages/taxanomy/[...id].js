@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import ReactMarkdownComponents from "../../lib/ReactMarkdownComponents";
 const Comment = () => {
   const router = useRouter();
-  let slug = router.query.id.join("/");
+  let slug = router.query.id == undefined ? "" : router.query.id.join("/");
   const [content, setContent] = useState({});
   useEffect(() => {
     getContent();
